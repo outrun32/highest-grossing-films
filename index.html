@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highest-Grossing Films Visualization</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Highest-Grossing Films</h1>
+    </header>
+    
+    <section class="filters">
+        <h2>Explore the Data</h2>
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label for="year-filter">Release Year</label>
+                <div class="range-slider">
+                    <input type="range" id="year-min" min="1900" max="2025" value="1900">
+                    <input type="range" id="year-max" min="1900" max="2025" value="2025">
+                    <span id="year-range-display">1900 - 2025</span>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <label for="country-filter">Country of Origin</label>
+                <select id="country-filter">
+                    <option value="all">All Countries</option>
+                    <!-- Will be populated with JavaScript -->
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="sort-by">Sort Results</label>
+                <select id="sort-by">
+                    <option value="box_office_desc">Revenue (High to Low)</option>
+                    <option value="box_office_asc">Revenue (Low to High)</option>
+                    <option value="year_desc">Year (Newest First)</option>
+                    <option value="year_asc">Year (Oldest First)</option>
+                    <option value="title_asc">Title (A-Z)</option>
+                </select>
+            </div>
+        </div>
+    </section>
+    
+    <section class="visualization">
+        <h2>Box Office Performance</h2>
+        <div id="chart"></div>
+    </section>
+    
+    <section class="data-table">
+        <h2>Film Details</h2>
+        <table id="films-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Director</th>
+                    <th>Box Office</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Will be populated with JavaScript -->
+            </tbody>
+        </table>
+    </section>
+    
+    <footer>
+        <p>Data Wrangling and Visualization Course &copy; 2025 | Data sourced from Wikipedia</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
